@@ -13,6 +13,8 @@ alias tls='tmux list-sessions'
 alias tat='tmux attach-session -t'
 alias vim='nvim'
 
+export EDITOR=nvim
+
 export NVM_DIR="/Users/sam/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
