@@ -1,3 +1,4 @@
+call dein#install()
 call plug#begin()
 
 Plug 'NLKNguyen/papercolor-theme'
@@ -48,6 +49,9 @@ set visualbell
 set laststatus=2
 
 set lazyredraw
+
+set shiftwidth=4
+set expandtab
 
 filetype on
 filetype plugin on
