@@ -1,2 +1,5 @@
 [alias]
 	st = status
+	it = !git init && git commit -m “root” --allow-empty
+[user]
+	email = sjmarshy@gmail.com

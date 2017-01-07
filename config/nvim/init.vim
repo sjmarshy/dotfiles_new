@@ -1,15 +1,11 @@
-call dein#install()
 call plug#begin()
 
 Plug 'NLKNguyen/papercolor-theme'
-
 Plug 'w0rp/ale' " linter
-
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
-
 Plug 'ctrlpvim/ctrlp.vim'
-
 Plug 'ervandew/supertab'
+Plug 'hecal3/vim-leader-guide'
 
 call plug#end()
 
@@ -72,3 +68,6 @@ vnoremap L $
 
 nmap <leader>e :CtrlP<cr>
 nmap <leader>b :CtrlPBuffer<cr>
+
+nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
+vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
