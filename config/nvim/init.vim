@@ -7,6 +7,14 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'hecal3/vim-leader-guide'
 
+" javascript
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
+Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
+Plug 'moll/vim-node', { 'for': 'javascript' }
+
 call plug#end()
 
 colo PaperColor
@@ -49,10 +57,27 @@ set lazyredraw
 set shiftwidth=4
 set expandtab
 
+set conceallevel=1
+
 filetype on
 filetype plugin on
 filetype plugin indent on
 syntax enable
+
+let g:deoplete#enable_at_startup = 1
+
+" vim-javascript
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_noarg_arrow_function = "🞅"
 
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>l
