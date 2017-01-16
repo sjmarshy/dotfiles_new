@@ -23,3 +23,5 @@ export NVM_DIR="/Users/sam/.nvm"
 
 export PATH=/Users/sam/bin:./node_modules/.bin:/Users/sam/go/bin:$PATH
 export GOPATH=/Users/sam/go
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
