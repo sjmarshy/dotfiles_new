@@ -6,6 +6,10 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'hecal3/vim-leader-guide'
+Plug 'editorconfig/editorconfig-vim'
+
+" ftl
+Plug 'dodie/vim-disapprove-deep-indentation'
 
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -13,6 +17,7 @@ Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'carlitux/deoplete-ternjs', { 'for': 'javascript' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'moll/vim-node', { 'for': 'javascript' }
 
 call plug#end()
@@ -59,6 +64,8 @@ set expandtab
 
 set conceallevel=1
 
+set statusline+='%{ALEGetStatusLine()}'
+
 filetype on
 filetype plugin on
 filetype plugin indent on
@@ -77,7 +84,12 @@ let g:javascript_conceal_prototype            = "¶"
 let g:javascript_conceal_static               = "•"
 let g:javascript_conceal_super                = "Ω"
 let g:javascript_conceal_arrow_function       = "⇒"
-let g:javascript_conceal_noarg_arrow_function = "🞅"
+
+" vim-jsx
+let g:jsx_ext_required = 0
+
+" ctrlp
+let g:ctrlp_custom_ignore = '\(node_modules\|dist\|coverage\|yarn.lock\)$'
 
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>l
@@ -96,3 +108,7 @@ nmap <leader>b :CtrlPBuffer<cr>
 
 nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
 vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
+
+"ale
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)

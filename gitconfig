@@ -2,5 +2,9 @@
 	st = status
 	it = !git init && git commit -m “root” --allow-empty
         co = checkout
+        br = branch
+	lg = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+	quick-stats = ! /usr/local/bin/git-quick-stats
 [user]
 	email = sjmarshy@gmail.com
+	name = Sam Marshall
