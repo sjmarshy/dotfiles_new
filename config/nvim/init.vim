@@ -8,8 +8,10 @@ Plug 'ervandew/supertab'
 Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'
 
-" ftl
+" for the lols
 Plug 'dodie/vim-disapprove-deep-indentation'
+Plug 'takac/vim-hardtime'
+Plug 'scrooloose/nerdtree'
 
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -90,6 +92,10 @@ let g:jsx_ext_required = 0
 
 " ctrlp
 let g:ctrlp_custom_ignore = '\(node_modules\|dist\|coverage\|yarn.lock\)$'
+
+" hardtime
+let g:hardtime_default_on = 1
+let g:hardtime_ignore_buffer_patterns = [ "NERD.*" ]
 
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>l
