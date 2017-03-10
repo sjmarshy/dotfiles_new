@@ -7,11 +7,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'hecal3/vim-leader-guide'
 Plug 'editorconfig/editorconfig-vim'
-
-" for the lols
 Plug 'dodie/vim-disapprove-deep-indentation'
 Plug 'takac/vim-hardtime'
 Plug 'scrooloose/nerdtree'
+Plug 'Zuyuanp/nerdtree-git-plugin'
+Plug 'Raimondi/VimRegEx.vim'
+Plug 'tpope/vim-surround'
 
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -118,3 +119,5 @@ vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
 "ale
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+nnoremap <leader>t :NERDTreeToggle<CR>
