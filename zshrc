@@ -7,6 +7,7 @@ antigen bundle git
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 antigen bundle olivierverdier/zsh-git-prompt
+antigen bundle mafredri/zsh-async
 
 antigen apply
 
@@ -20,6 +21,7 @@ alias tls='tmux list-sessions'
 alias tat='tmux attach-session -t'
 alias vim='nvim'
 alias org='gorganizer'
+alias k='kanban'
 
 alias v='f -e nvim' # quick opening files with vim
 alias o='a -e open' #  open any file
