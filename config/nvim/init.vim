@@ -98,6 +98,9 @@ let g:ctrlp_custom_ignore = '\(node_modules\|dist\|coverage\|yarn.lock\)$'
 let g:hardtime_default_on = 1
 let g:hardtime_ignore_buffer_patterns = [ "NERD.*" ]
 
+" auto-close vim if the only window left is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>l
 nnoremap <C-h> <C-w>h
