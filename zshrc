@@ -35,3 +35,22 @@ export PATH=/Users/sam/bin:./node_modules/.bin:/Users/sam/go/bin:/Users/smarshal
 export GOPATH=/Users/sam/go
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# async
+BREW_COMPLETED=0
+brew_callback() {
+    BREW_COMPLETED=$(( BREW_COMPLETED + 1 ))
+    print $@
+    if (( BREW_COMPLETED < 3 )); then
+        echo "brew up to date"
+        async_stop_worker brew
+    fi
+}
+
+async_start_worker brew -un
+
+async_register_callback brew brew_callback
+
+async_job brew 'brew update'
+async_job brew 'brew upgrade'
+async_job brew 'brew cleanup'
