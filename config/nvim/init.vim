@@ -10,6 +10,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'dodie/vim-disapprove-deep-indentation'
 Plug 'takac/vim-hardtime'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'Zuyuanp/nerdtree-git-plugin'
 Plug 'Raimondi/VimRegEx.vim'
 Plug 'tpope/vim-surround'
@@ -22,6 +23,7 @@ Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'moll/vim-node', { 'for': 'javascript' }
+Plug 'fleischie/vim-styled-components', { 'for': 'javascript' }
 
 call plug#end()
 
@@ -51,7 +53,7 @@ set showmatch
 set matchtime=1
 
 set wrap
-set colorcolumn=80
+set colorcolumn=120
 set cursorline
 
 set scrolloff=20
@@ -123,4 +125,5 @@ vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" NERDTree
 nnoremap <leader>t :NERDTreeToggle<CR>
