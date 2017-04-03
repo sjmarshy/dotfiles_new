@@ -1,15 +1,23 @@
+source "${HOME}/.zgen/zgen.zsh"
+
+# if the init scipt doesn't exist
+if ! zgen saved; then
+
+  # specify plugins here
+  zgen oh-my-zsh
+  zgen oh-my-zsh plugins/git
+
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load olivierverdier/zsh-git-prompt
+  zgen load mafredri/zsh-async
+  zgen load zsh-users/zsh-completions
+  
+  # generate the init script from plugins above
+  zgen save
+fi
+
 autoload -U promptinit; promptinit
 prompt pure
-
-source $(brew --prefix)/share/antigen/antigen.zsh
-
-antigen bundle git
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-completions
-antigen bundle olivierverdier/zsh-git-prompt
-antigen bundle mafredri/zsh-async
-
-antigen apply
 
 eval "$(fasd --init zsh-hook posix-alias)"
 
