@@ -24,6 +24,7 @@ Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'moll/vim-node', { 'for': 'javascript' }
 Plug 'fleischie/vim-styled-components', { 'for': 'javascript' }
+Plug 'flowtype/vim-flow', { 'for': 'javascript' }
 
 call plug#end()
 
