@@ -8,3 +8,9 @@
 [user]
 	email = sjmarshy@gmail.com
 	name = Sam Marshall
+
+[diff]
+    tool = diffmerge
+
+[difftool "diffmerge"]
+	cmd = /usr/local/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
