@@ -13,7 +13,7 @@
     tool = diffmerge
 
 [difftool "diffmerge"]
-	cmd = /usr/local/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
+    cmd = /usr/local/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
 
 [merge]
     conflictstyle = diff3
