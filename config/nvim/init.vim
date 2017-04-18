@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Zuyuanp/nerdtree-git-plugin'
 Plug 'Raimondi/VimRegEx.vim'
 Plug 'tpope/vim-surround'
+Plug 'sbdchd/neoformat'
 
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -100,6 +101,15 @@ let g:ctrlp_custom_ignore = '\(node_modules\|dist\|coverage\|yarn.lock\)$'
 " hardtime
 let g:hardtime_default_on = 1
 let g:hardtime_ignore_buffer_patterns = [ "NERD.*" ]
+
+let g:neoformat_javascript_prettier = {
+    \ 'exe': 'prettier',
+    \ 'args': ['--stdin', '--single-quote', '--trailing-comma all', '--tab-width 4', '--write'],
+    \ 'stdin': 1,
+    \ }
+let g:neoformat_enabled_javascript = ['prettier']
+
+autocmd BufWritePre *.js Neoformat
 
 " auto-close vim if the only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
