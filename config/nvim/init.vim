@@ -15,6 +15,8 @@ Plug 'Zuyuanp/nerdtree-git-plugin'
 Plug 'Raimondi/VimRegEx.vim'
 Plug 'tpope/vim-surround'
 Plug 'sbdchd/neoformat'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
 
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -117,10 +119,6 @@ autocmd BufWritePre *.js Neoformat " format when saving js files
 
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 nnoremap H 0
 nnoremap L $
@@ -139,3 +137,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<CR>
+
+" vimux
+map <leader>vp :VimuxPromptCommand<CR>
+map <leader>vl :VimuxRunLastCommand<CR>
+map <leader>vz :VimuxZoomRunner<CR>
