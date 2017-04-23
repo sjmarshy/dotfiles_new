@@ -32,6 +32,8 @@ alias org='gorganizer'
 alias v='f -e nvim' # quick opening files with vim
 alias o='a -e open' #  open any file
 
+alias c='clear'
+
 alias k='kanban'
 
 transfer() {
