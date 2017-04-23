@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Zuyuanp/nerdtree-git-plugin'
 Plug 'Raimondi/VimRegEx.vim'
 Plug 'tpope/vim-surround'
+Plug 'sbdchd/neoformat'
 
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -101,8 +102,18 @@ let g:ctrlp_custom_ignore = '\(node_modules\|dist\|coverage\|yarn.lock\)$'
 let g:hardtime_default_on = 1
 let g:hardtime_ignore_buffer_patterns = [ "NERD.*" ]
 
+" prettier
+let neoformat_javascript_prettier = {
+    \ 'exe': 'prettier',
+    \ 'args': [ '--stdin', '--single-quote true', '--trailing-comma es5', '--print-width 100' ],
+    \ 'stdin': 1
+    \ }
+
+let neoformat_enabled_javascript = [ 'prettier' ]
+
 " auto-close vim if the only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufWritePre *.js Neoformat " format when saving js files
 
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>l
