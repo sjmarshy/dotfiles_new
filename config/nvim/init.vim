@@ -15,6 +15,8 @@ Plug 'Zuyuanp/nerdtree-git-plugin'
 Plug 'Raimondi/VimRegEx.vim'
 Plug 'tpope/vim-surround'
 Plug 'sbdchd/neoformat'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
 
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -102,9 +104,10 @@ let g:ctrlp_custom_ignore = '\(node_modules\|dist\|coverage\|yarn.lock\)$'
 let g:hardtime_default_on = 1
 let g:hardtime_ignore_buffer_patterns = [ "NERD.*" ]
 
+" prettier
 let g:neoformat_javascript_prettier = {
     \ 'exe': 'prettier',
-    \ 'args': ['--stdin', '--single-quote', '--trailing-comma all', '--tab-width 4', '--write'],
+    \ 'args': ['--stdin', '--single-quote', '--trailing-comma es5', '--print-width 72', '--tab-width 4', '--write'],
     \ 'stdin': 1,
     \ }
 let g:neoformat_enabled_javascript = ['prettier']
@@ -113,13 +116,10 @@ autocmd BufWritePre *.js Neoformat
 
 " auto-close vim if the only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufWritePre *.js Neoformat " format when saving js files
 
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 nnoremap H 0
 nnoremap L $
@@ -138,3 +138,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<CR>
+
+" vimux
+map <leader>vp :VimuxPromptCommand<CR>
+map <leader>vl :VimuxRunLastCommand<CR>
+map <leader>vz :VimuxZoomRunner<CR>
