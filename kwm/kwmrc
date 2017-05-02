@@ -1,0 +1,25 @@
+kwmc config padding 40 20 20 20
+kwmc config gap 15 15
+
+kwmc config float-non-resizable on
+kwmc config center-on-float on
+kwmc config standby-on-float on
+kwmc config mouse-follows-focus on
+
+kwmc config mouse-drag on
+kwmc config mouse-drag mod shift+alt
+
+kwmc rule owner="ITerm2" properties={display="1"}
+kwmc rule owner="Slack" properties={float="true"}
+
+# Enable border for focused window
+kwmc config border focused on
+kwmc config border focused size 2
+kwmc config border focused color 0xFFBDD322
+kwmc config border focused radius 6
+
+# Enable border for marked window
+kwmc config border marked on
+kwmc config border marked size 2
+kwmc config border marked color 0xFFCC5577
+kwmc config border marked radius 6
