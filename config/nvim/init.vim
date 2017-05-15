@@ -1,6 +1,7 @@
 call plug#begin()
 
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'nightsense/seabird' " requires terminal config: https://github.com/nightsense/seabird#step-3-configure-terminal-colours-if-using-vim-in-a-terminal
+
 Plug 'w0rp/ale' " linter
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " autocomplete
 Plug 'ctrlpvim/ctrlp.vim'
@@ -31,7 +32,7 @@ Plug 'flowtype/vim-flow', { 'for': 'javascript' }
 
 call plug#end()
 
-colo PaperColor
+colo greygull
 
 set nobackup
 
@@ -111,8 +112,6 @@ let g:neoformat_javascript_prettier = {
     \ 'stdin': 1,
     \ }
 let g:neoformat_enabled_javascript = ['prettier']
-
-autocmd BufWritePre *.js Neoformat
 
 " auto-close vim if the only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
