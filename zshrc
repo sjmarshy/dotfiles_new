@@ -56,5 +56,6 @@ export GOPATH=$HOME/go
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export NODE_ENV=dev
 
 hist import
