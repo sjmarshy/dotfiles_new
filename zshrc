@@ -35,6 +35,7 @@ alias o='a -e open' #  open any file
 alias c='clear'
 
 alias k='kanban'
+alias gt='git town'
 
 transfer() {
     # write to output to tmpfile because of progress bar
