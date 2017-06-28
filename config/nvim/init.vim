@@ -18,6 +18,10 @@ Plug 'tpope/vim-surround'
 Plug 'sbdchd/neoformat'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
+Plug 'fsharp/vim-fsharp', {
+      \ 'for': 'fsharp',
+      \ 'do':  'make fsautocomplete',
+      \}
 
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -83,18 +87,6 @@ syntax enable
 
 let g:deoplete#enable_at_startup = 1
 
-" vim-javascript
-let g:javascript_conceal_function             = "ƒ"
-let g:javascript_conceal_null                 = "ø"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "⇚"
-let g:javascript_conceal_undefined            = "¿"
-let g:javascript_conceal_NaN                  = "ℕ"
-let g:javascript_conceal_prototype            = "¶"
-let g:javascript_conceal_static               = "•"
-let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function       = "⇒"
-
 " vim-jsx
 let g:jsx_ext_required = 0
 
@@ -111,7 +103,14 @@ let g:neoformat_javascript_prettier = {
     \ 'args': ['--stdin', '--single-quote', '--trailing-comma es5', '--print-width 72', '--tab-width 4', '--write'],
     \ 'stdin': 1,
     \ }
-let g:neoformat_enabled_javascript = ['prettier']
+
+let g:neoformat_javascript_prettiereslint = {
+    \ 'exe': 'prettier-eslint',
+    \ 'args': ['--stdin', '--single-quote', '--trailing-comma es5', '--print-width 72', '--tab-width 4', '--write'],
+    \ 'stdin': 1,
+    \ }
+
+let g:neoformat_enabled_javascript = ['prettiereslint','prettier']
 
 " auto-close vim if the only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
