@@ -59,4 +59,9 @@ export GOPATH=$HOME/go
 
 export NODE_ENV=dev
 
+function chpwd() {
+    emulate -L zsh
+    nvm use
+}
+
 hist import
